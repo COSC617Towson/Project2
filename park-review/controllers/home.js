@@ -7,3 +7,9 @@ exports.index = (req, res) => {
     title: 'Home'
   });
 };
+
+exports.park = (req, res) => {
+  res.render('park', {
+    title: 'Park Review'
+  });
+};
