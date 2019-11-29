@@ -6,7 +6,35 @@
 </div>
 </div>
 <head>
-
+  <script>
+        var MongoClient = require('mongodb').MongoClient;
+        var  url = "mongodb://localhost:27017/test";
+      
+       MongoClient.connect(url,{useNewUrlParser:true, useUnifiedTopology: true },function(err,db){
+       if(err){
+          throw err;
+         }
+      
+         var dbo = db.db("test");
+      
+      
+      var mysort ={time:1};
+      dbo.collection("comment").find({},{_id:0,parkId:1}).sort(mysort).toArray(function(err,result){
+      if(err){
+      throw err;
+      }
+      
+      var  comment=result[0].content;
+      var b=JSON.stringify(result[0].content);      
+      
+      document.write(b);
+      //console.log(result);
+      //   console.log("1111")
+      db.close();
+      })
+      
+      });  
+    </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
