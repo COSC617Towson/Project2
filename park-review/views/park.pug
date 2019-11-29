@@ -6,10 +6,9 @@ block content
  
   h1.mt-4.mb-3
     | 
-    small  Yellowstone National Park
+    small  Acadia
   
-  
-  img.img-fluid.rounded.mb-4(src='towson.jpg' alt='')
+  img.img-fluid.rounded.mb-4(src='https://upload.wikimedia.org/wikipedia/commons/9/93/Bass_Harbor_Head_Light_Station_2016.jpg' alt='')
   // Marketing Icons Section
   .row
     .col-lg-4.mb-4
@@ -23,15 +22,13 @@ block content
           a.btn.btn-primary(href='#') Learn More
     .col-lg-4.mb-4
       .card.h-100
-        h4.card-header Info
+        h4.card-header Description
         .card-body
           p.card-text
-            | (description)
-        .card-footer
-          a.btn.btn-primary(href='#') Learn More
+            | Covering most of Mount Desert Island and other coastal islands, Acadia features the tallest mountain on the Atlantic coast of the United States, granite peaks, ocean shoreline, woodlands, and lakes. There are freshwater, estuary, forest, and intertidal habitats.
     .col-lg-4.mb-4
       .card.h-100
-        h4.card-header Comment
+        h4.card-header Comments
         .card-body
           // comment model
           .row
@@ -61,10 +58,6 @@ block content
                 | test
               hr
           // comment model
-        .card-footer
-          a.btn.btn-primary(href='#') Learn More
-          input#contentId(type='hidden' value='<%= content.id %>')
-          
         // comment
         
         
