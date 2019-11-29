@@ -1,0 +1,75 @@
+
+extends layout.pug
+block content
+
+  // Page Heading/Breadcrumbs
+ 
+  h1.mt-4.mb-3
+    | 
+    small  Yellowstone National Park
+  
+  
+  img.img-fluid.rounded.mb-4(src='towson.jpg' alt='')
+  // Marketing Icons Section
+  .row
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Google Map
+        .card-body
+          p.card-text
+          #map
+         
+        .card-footer
+          a.btn.btn-primary(href='#') Learn More
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Info
+        .card-body
+          p.card-text
+            | (description)
+        .card-footer
+          a.btn.btn-primary(href='#') Learn More
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Comment
+        .card-body
+          // comment model
+          .row
+            .col-md-12
+              strong
+                a(href='/users/5adc9268dc320d00149f14ce') sh
+              span.pull-right 2 years ago
+              p
+                | Cool!
+                script.
+                  document.write(comment);
+              hr
+          .row
+            .col-md-12
+              strong
+                a(href='/users/5adf6357560fd600145024ed') kashta
+              span.pull-right 2 years ago
+              p
+                | test
+              hr
+          .row
+            .col-md-12
+              strong
+                a(href='/users/5aeba41390ea4900149b3a02') carrot
+              span.pull-right 2 years ago
+              p
+                | test
+              hr
+          // comment model
+        .card-footer
+          a.btn.btn-primary(href='#') Learn More
+          input#contentId(type='hidden' value='<%= content.id %>')
+          
+        // comment
+        
+        
+       
+        
+  
+    
+     
