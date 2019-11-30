@@ -1,88 +1,68 @@
-extends layout
 
+extends layout.pug
 block content
-    style.
-        /* Set the size of the div element that contains the map */
-        #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-        }
-    // Page Content
-    .container
-    // Page Heading/Breadcrumbs
-    h1.mt-4.mb-3
-        small Yellowstone National Park
-    // Image Header
-    // <img class="img-fluid rounded mb-4" src="http://placehold.it/1200x300" alt="">
-    img.img-fluid.rounded.mb-4(src='towson.jpg' alt='')
-    // Marketing Icons Section
-    .row
-        .col-lg-4.mb-4
-        .card.h-100
-            h4.card-header Google Map
-            .card-body
-            p.card-text
-            #map
-            script.
-                // Initialize and add the map
-                function initMap() {
-                // The location of Uluru
-                var location = {lat: 39.392, lng: -76.612};
-                // The map, centered at Uluru
-                var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 4, center: location});
-                // The marker, positioned at Uluru
-                var marker = new google.maps.Marker({position: location, map: map});
-                }
-            script(async='' defer='' src='https://maps.googleapis.com/maps/api/js?sensor=false&language=en-us&key=AIzaSyCRTSgwKuk3nQ9YPmlj5gOPMT40JTUiEiU&callback=initMap')
-            // AIzaSyCRTSgwKuk3nQ9YPmlj5gOPMT40JTUiEiU  Singh's api
-            // AIzaSyDMKInuOwu3RUXt-9-V-GPeOZuVQU9PYLY    my api
-            .card-footer
-            a.btn.btn-primary(href='#') Learn More
-        .col-lg-4.mb-4
-        .card.h-100
-            h4.card-header Info
-            .card-body
-            p.card-text
-                | Towson university is a public university in Baltimore county, part of the university of Maryland system. Towson university was founded in 1866. Originally, towson was the first teacher training school in Maryland. At present, towson university has eight colleges and more than 20,000 students.
-            .card-footer
-            a.btn.btn-primary(href='#') Learn More
-        .col-lg-4.mb-4
-        .card.h-100
-            h4.card-header Comment
-            .card-body
-            // comment model
-            .row
-                .col-md-12
-                strong
-                    a(href='/users/5adc9268dc320d00149f14ce') sh
-                span.pull-right 2 years ago
-                p
-                    | Cool!
-                hr
-            .row
-                .col-md-12
-                strong
-                    a(href='/users/5adf6357560fd600145024ed') kashta
-                span.pull-right 2 years ago
-                p
-                    | test
-                hr
-            .row
-                .col-md-12
-                strong
-                    a(href='/users/5aeba41390ea4900149b3a02') carrot
-                span.pull-right 2 years ago
-                p
-                    | test
-                hr
-            // comment model
-            .card-footer
-            a.btn.btn-primary(href='#') Learn More
-    // /.row
-    // /.container
+
+  // Page Heading/Breadcrumbs
+ 
+  h1.mt-4.mb-3
+    | 
+    small  Acadia
+  
+  img.img-fluid.rounded.mb-4(src='https://upload.wikimedia.org/wikipedia/commons/9/93/Bass_Harbor_Head_Light_Station_2016.jpg' alt='')
+  // Marketing Icons Section
+  .row
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Google Map
+        .card-body
+          p.card-text
+          #map
+         
+        .card-footer
+          a.btn.btn-primary(href='#') Learn More
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Description
+        .card-body
+          p.card-text
+            | Covering most of Mount Desert Island and other coastal islands, Acadia features the tallest mountain on the Atlantic coast of the United States, granite peaks, ocean shoreline, woodlands, and lakes. There are freshwater, estuary, forest, and intertidal habitats.
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Comments
+        .card-body
+          // comment model
+          .row
+            .col-md-12
+              strong
+                a(href='/users/5adc9268dc320d00149f14ce') sh
+              span.pull-right 2 years ago
+              p
+                | Cool!
+                script.
+                  document.write(comment);
+              hr
+          .row
+            .col-md-12
+              strong
+                a(href='/users/5adf6357560fd600145024ed') kashta
+              span.pull-right 2 years ago
+              p
+                | test
+              hr
+          .row
+            .col-md-12
+              strong
+                a(href='/users/5aeba41390ea4900149b3a02') carrot
+              span.pull-right 2 years ago
+              p
+                | test
+              hr
+          // comment model
+        // comment
+        
+        
+       
+        
+  
     
-    // /.container
-    // Bootstrap core JavaScript
-    script(src='vendor/jquery/jquery.min.js')
-    script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+     
