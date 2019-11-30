@@ -48,7 +48,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const parkRoutes = require('./routes/parks');
+const parkRoutes = require('./routes/router');
 app.use("/parks", parkRoutes);
 
 /**
@@ -137,6 +137,8 @@ app.get('/', homeController.index);
 
 //Route to the park page, added controller in home.js
 app.get('/park', homeController.park);
+app.get('/addPark', homeController.addPark);
+//app.get('/viewPark', homeController.viewPark);
 
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

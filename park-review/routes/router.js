@@ -4,20 +4,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const Park = require('../models/park');
 
-
-
 router.get('/', (req, res, next) => {
   Park.find()
     .exec()
-    .then(docs => {
-      console.log(docs);
-      //   if (docs.length >= 0) {
-      res.status(200).json(docs);
-      //   } else {
-      //       res.status(404).json({
-      //           message: 'No entries found'
-      //       });
-      //   }
+    .then(parks => {
+      res.status(200).json(parks);
     })
     .catch(err => {
       console.log(err);
@@ -27,7 +18,7 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/addPark', (req, res, next) => {
   const park = new Park({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,

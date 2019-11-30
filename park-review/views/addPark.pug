@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+    div.row
+        .col-sm-12
+            h2=title
+            form(method='POST', actions="/addPark")
+                div.form-group
+                    label(for='park') Enter Park Name:
+                    input#park.form-control(type='text', placeholder='Park Name' name='parkname')
+                div.form-group
+                    label(for='park') Enter Park Name:
+                    input#park.form-control(type='text', placeholder='Park Name' name='parkname')
+                div.form-group
+                    label(for='park') Enter Park Name:
+                    input#park.form-control(type='text', placeholder='Park Name' name='parkname')
+                
+                button.btn.btn-primary(type='submit') Submit
