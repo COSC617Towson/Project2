@@ -8,7 +8,9 @@ router.get('/', (req, res, next) => {
   Park.find()
     .exec()
     .then(parks => {
-      res.status(200).json(parks);
+      console.log(JSON.stringify(parks[0]))
+      res.render('viewPark.pug', {parks: parks[0]})
+      res.status(200);
     })
     .catch(err => {
       console.log(err);

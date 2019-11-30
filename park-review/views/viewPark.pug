@@ -1,14 +1,6 @@
-extends layout.pug
-
-block content
-    .row
-        .col-sm-12
-            h2=title
-            table.table.table-hover
-                thead
-                    th Park Name
-                    //th Park Location
-                tbody
-                    //for park in parks
-                        tr
-                            td (#park.name)
+html
+    body
+        h1 Hello!
+        p Park Name: #{parks.name}!
+        p Image Link: #{parks.image_link}
+        p Location: #{parks.location}

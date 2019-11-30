@@ -21,10 +21,10 @@ exports.addPark = (req, res) => {
   });
 };
 
-/*exports.viewPark = (req, res) => {
+exports.viewPark = (req, res) => {
   console.log(req)
-  res.render('viewPark', {
-    title: req.body.name
+  res.render('parks/viewPark', {
+    title: 'View Park'
   });
-};*/
+};
 

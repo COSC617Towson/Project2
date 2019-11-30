@@ -6,13 +6,28 @@ block content
             h2=title
             form(method='POST', actions="/addPark")
                 div.form-group
-                    label(for='park') Enter Park Name:
-                    input#park.form-control(type='text', placeholder='Park Name' name='parkname')
+                    label(for='name') Enter Park Name:
+                    input#parks.form-control(type='text', placeholder='Park Name' name='parkname')
                 div.form-group
-                    label(for='park') Enter Park Name:
-                    input#park.form-control(type='text', placeholder='Park Name' name='parkname')
+                    label(for='image_link') Enter Image Link:
+                    input#parks.form-control(type='text', placeholder='Image Link' name='imagelink')
                 div.form-group
-                    label(for='park') Enter Park Name:
-                    input#park.form-control(type='text', placeholder='Park Name' name='parkname')
+                    label(for='location') Enter Location:
+                    input#parks.form-control(type='text', placeholder='Location' name='location')
+                div.form-group
+                    label(for='established_date') Enter Established Date:
+                    input#parks.form-control(type='text', placeholder='Established Date' name='establisheddate')
+                div.form-group
+                    label(for='area') Enter Area:
+                    input#parks.form-control(type='text', placeholder='Area' name='area')
+                div.form-group
+                    label(for='yearly_visitors') Enter Yearly Visitors:
+                    input#parks.form-control(type='text', placeholder='Yearly Visitors' name='yearlyvisitors')
+                div.form-group
+                    label(for='description') Enter Description:
+                    input#parks.form-control(type='text', placeholder='Description' name='description')
+                div.form-group
+                    label(for='twitter_id') Enter Twitter ID:
+                    input#parks.form-control(type='text', placeholder='Twitter ID' name='twitterid')
                 
                 button.btn.btn-primary(type='submit') Submit
