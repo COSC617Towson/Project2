@@ -1,5 +1,11 @@
-html
-    body
-        h1 Hello!
-        each elem,i in parks
-            p !{elem.name}-!{elem.location}
+extends layout
+
+block content
+  h1 List of National Parks
+  hr
+  .row
+    .col-md-6
+        each elem, i in parks
+            h2 !{elem.name}
+            p
+            a.btn.btn-raised(href='#', role='button') View details »

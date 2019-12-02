@@ -1,25 +1,15 @@
 extends layout
 
 block content
+  body
   h1 Welcome to ParkReview
-  p.lead A place to leave reviews for your favorite National Parks!
+  p.lead A place to get information for your favorite National Parks!
   hr
+  img.img-fluid.rounded.mb-4(src='https://quotefancy.com/media/wallpaper/3840x2160/5219149-James-Bryce-Quote-The-national-park-is-the-best-idea-America-ever.jpg' alt='')
   .row
-    .col-md-6
-      h2 Acadia
-      p Click here to view park reviews!
-      p
-        a.btn.btn-raised(href='park', role='button') View Park »
-  .row
-    .col-md-6
-      h2 Add Park
-      p Click here to add reviews
-      p
+    .col-sm-6
+       h2 View all Parks
+       a.btn.btn-raised(href='parks', role='button') View Parks »
+    .col-sm-6
+        h2 Add a New Park
         a.btn.btn-raised(href='addPark', role='button') Add Parks »
-  .row
-    .col-md-6
-      h2 View Parks
-      p Click here to view all parks
-      p
-        a.btn.btn-raised(href='parks', role='button') View Parks »
-

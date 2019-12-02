@@ -1,25 +1,16 @@
-
 extends layout.pug
 block content
-
-  // Page Heading/Breadcrumbs
- 
-  h1.mt-4.mb-3
+  body(margin:0 auto;)
+  style.
+            #map{
+                width: 100%;
+                height: 100%;
+            }
+  h1.mt-4.mb-4
     | 
-    small  Acadia
-  
+    large  #{parks.name} National Park
   img.img-fluid.rounded.mb-4(src='https://upload.wikimedia.org/wikipedia/commons/9/93/Bass_Harbor_Head_Light_Station_2016.jpg' alt='')
-  // Marketing Icons Section
   .row
-    .col-lg-4.mb-4
-      .card.h-100
-        h4.card-header Google Map
-        .card-body
-          p.card-text
-          #map
-         
-        .card-footer
-          a.btn.btn-primary(href='#') Learn More
     .col-lg-4.mb-4
       .card.h-100
         h4.card-header Description
@@ -28,41 +19,68 @@ block content
             | Covering most of Mount Desert Island and other coastal islands, Acadia features the tallest mountain on the Atlantic coast of the United States, granite peaks, ocean shoreline, woodlands, and lakes. There are freshwater, estuary, forest, and intertidal habitats.
     .col-lg-4.mb-4
       .card.h-100
+        h4.card-header Statistics
+        .card-body      
+          p.card-text
+            | Date Established: #{parks.established_date}
+          p.card-text
+            | Area: #{parks.area}
+          p.card-text
+            | Yearly Visitors: #{parks.yearly_visitors}
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Latest Park Information
+        a.twitter-timeline(href='https://twitter.com/AcadiaNPS' data-tweet-limit='1' data-width='399')
+        script(async='' src='http://platform.twitter.com/widgets.js' charset='utf-8')
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Weather
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Google Map
+        .card-body
+        #map
+        script.
+            function initMap() {
+                var mapProp= {
+                    center:new google.maps.LatLng( #{parks.location}),
+                    zoom:5,
+                };
+                var map = new google.maps.Map(document.getElementById('map'), mapProp);
+                var marker = new google.maps.Marker({
+                  position:new google.maps.LatLng( #{parks.location}),
+                  animation:google.maps.Animation.DROP
+                });
+                marker.setMap(map);             
+                var marker1 = new google.maps.Marker({
+                  position:new google.maps.LatLng( #{parks.location}),
+                  animation:google.maps.Animation.DROP
+                });
+                marker1.setMap(map);                
+            }
+        script(async defer src=`https://maps.googleapis.com/maps/api/js?key=AIzaSyAY25CaMHNKfL4UNNF0uOmRPruyRQL9N6g&callback=initMap`)
+    .col-lg-4.mb-4
+      .card.h-100
         h4.card-header Comments
         .card-body
           // comment model
-          .row
-            .col-md-12
-              strong
-                a(href='/users/5adc9268dc320d00149f14ce') sh
-              span.pull-right 2 years ago
-              p
-                | Cool!
-                script.
-                  document.write(comment);
-              hr
-          .row
-            .col-md-12
-              strong
-                a(href='/users/5adf6357560fd600145024ed') kashta
-              span.pull-right 2 years ago
-              p
-                | test
-              hr
-          .row
-            .col-md-12
-              strong
-                a(href='/users/5aeba41390ea4900149b3a02') carrot
-              span.pull-right 2 years ago
-              p
-                | test
-              hr
-          // comment model
-        // comment
-        
-        
-       
-        
-  
-    
-     
+          #disqus_thread
+            script.
+              /**
+              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+              /*
+              var disqus_config = function () {
+              this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              */
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://parkreview.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+            noscript
+              | Please enable JavaScript to view the 
+              a(href='https://disqus.com/?ref_noscript') comments powered by Disqus. 
