@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     .exec()
     .then(parks => {
       console.log(JSON.stringify(parks[0]))
-      res.render('viewPark.pug', {parks: parks[0]})
+      res.render('viewPark.pug', {parks: parks})
       res.status(200);
     })
     .catch(err => {

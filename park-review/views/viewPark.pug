@@ -1,6 +1,5 @@
 html
     body
         h1 Hello!
-        p Park Name: #{parks.name}!
-        p Image Link: #{parks.image_link}
-        p Location: #{parks.location}
+        each elem,i in parks
+            p !{elem.name}-!{elem.location}
