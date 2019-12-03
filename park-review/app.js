@@ -138,7 +138,8 @@ app.get('/', homeController.index);
 //Route to the park page, added controller in home.js
 app.get('/park', homeController.park);
 app.get('/addPark', homeController.addPark);
-//app.get('/viewPark', homeController.viewPark);
+app.get('/viewPark', homeController.viewPark);
+app.get('/park/viewPark', homeController.viewPark2);
 
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

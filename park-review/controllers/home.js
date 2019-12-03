@@ -28,3 +28,10 @@ exports.viewPark = (req, res) => {
   });
 };
 
+exports.viewPark2 = (req, res) => {
+  console.log(req)
+  res.render('parks/viewPark2', {
+    title: 'View Park'
+  });
+};
+

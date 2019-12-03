@@ -9,14 +9,14 @@ block content
   h1.mt-4.mb-4
     | 
     large  #{parks.name} National Park
-  img.img-fluid.rounded.mb-4(src='https://upload.wikimedia.org/wikipedia/commons/9/93/Bass_Harbor_Head_Light_Station_2016.jpg' alt='')
+  img.img-fluid.rounded.mb-4(src=parks.image_link alt='')
   .row
     .col-lg-4.mb-4
       .card.h-100
         h4.card-header Description
         .card-body
           p.card-text
-            | Covering most of Mount Desert Island and other coastal islands, Acadia features the tallest mountain on the Atlantic coast of the United States, granite peaks, ocean shoreline, woodlands, and lakes. There are freshwater, estuary, forest, and intertidal habitats.
+            | #{parks.description}
     .col-lg-4.mb-4
       .card.h-100
         h4.card-header Statistics
@@ -30,7 +30,7 @@ block content
     .col-lg-4.mb-4
       .card.h-100
         h4.card-header Latest Park Information
-        a.twitter-timeline(href='https://twitter.com/AcadiaNPS' data-tweet-limit='1' data-width='399')
+        a.twitter-timeline(href='https://twitter.com/' + parks.twitter_id data-tweet-limit='1' data-width='399')
         script(async='' src='http://platform.twitter.com/widgets.js' charset='utf-8')
     .col-lg-4.mb-4
       .card.h-100
@@ -43,17 +43,17 @@ block content
         script.
             function initMap() {
                 var mapProp= {
-                    center:new google.maps.LatLng( #{parks.location}),
+                    center:new google.maps.LatLng(parks.location),
                     zoom:5,
                 };
                 var map = new google.maps.Map(document.getElementById('map'), mapProp);
                 var marker = new google.maps.Marker({
-                  position:new google.maps.LatLng( #{parks.location}),
+                  position:new google.maps.LatLng(parks.location),
                   animation:google.maps.Animation.DROP
                 });
                 marker.setMap(map);             
                 var marker1 = new google.maps.Marker({
-                  position:new google.maps.LatLng( #{parks.location}),
+                  position:new google.maps.LatLng(parks.location),
                   animation:google.maps.Animation.DROP
                 });
                 marker1.setMap(map);                

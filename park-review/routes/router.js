@@ -20,6 +20,25 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.get('/viewPark/:id', (req, res, next) => {
+  //console.log(req)
+  var id = req.params.id
+  console.log(id)
+  Park.findById(id)
+    .exec()
+    .then(parks => {
+      console.log(JSON.stringify(parks))
+      res.render('viewPark2.pug', {parks: parks})
+      res.status(200);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+});
+
 router.post('/addPark', (req, res, next) => {
   const park = new Park({
     _id: new mongoose.Types.ObjectId(),

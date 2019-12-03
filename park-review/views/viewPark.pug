@@ -8,4 +8,5 @@ block content
         each elem, i in parks
             h2 !{elem.name}
             p
-            a.btn.btn-raised(href='#', role='button') View details »
+            a.btn.btn-raised(href='/parks/viewPark/' + elem.id, role='button', value=elem.id) View details »
+            p
