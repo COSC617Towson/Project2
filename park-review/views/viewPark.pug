@@ -4,9 +4,11 @@ block content
   h1 List of National Parks
   hr
   .row
-    .col-md-6
-        each elem, i in parks
-            h2 !{elem.name}
-            p
-            a.btn.btn-raised(href='/parks/viewPark/' + elem.id, role='button', value=elem.id) View details »
-            p
+    each elem, i in parks
+      .col-lg-4.mb-4
+        .card.h-100
+          a.btn.btn-raised(href='/parks/viewPark/' + elem.id, role='button', value=elem.id)
+            h4.card-header !{elem.name}
+            .card-body
+              p.card-text
+                img(src=elem.image_link height = '200px' width = '250px' alt='')
