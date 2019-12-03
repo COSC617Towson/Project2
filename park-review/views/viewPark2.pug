@@ -32,33 +32,42 @@ block content
         h4.card-header Latest Park Information
         a.twitter-timeline(href='https://twitter.com/' + parks.twitter_id data-tweet-limit='1' data-width='399')
         script(async='' src='http://platform.twitter.com/widgets.js' charset='utf-8')
+
+
+
     .col-lg-4.mb-4
       .card.h-100
         h4.card-header Weather
+        p 
+          | #{parks.name}
+          | #{parks.location}
+          
     .col-lg-4.mb-4
       .card.h-100
         h4.card-header Google Map
-        .card-body
         #map
         script.
             function initMap() {
                 var mapProp= {
-                    center:new google.maps.LatLng(parks.location),
+                    center:new google.maps.LatLng( #{parks.location}),
                     zoom:5,
                 };
                 var map = new google.maps.Map(document.getElementById('map'), mapProp);
                 var marker = new google.maps.Marker({
-                  position:new google.maps.LatLng(parks.location),
+                  position:new google.maps.LatLng( #{parks.location}),
                   animation:google.maps.Animation.DROP
                 });
                 marker.setMap(map);             
                 var marker1 = new google.maps.Marker({
-                  position:new google.maps.LatLng(parks.location),
+                  position:new google.maps.LatLng( #{parks.location}),
                   animation:google.maps.Animation.DROP
                 });
                 marker1.setMap(map);                
             }
         script(async defer src=`https://maps.googleapis.com/maps/api/js?key=AIzaSyAY25CaMHNKfL4UNNF0uOmRPruyRQL9N6g&callback=initMap`)
+
+
+
     .col-lg-4.mb-4
       .card.h-100
         h4.card-header Comments
