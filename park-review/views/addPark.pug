@@ -5,30 +5,31 @@ block content
     div.row
         .col-sm-12
             h2=title
-            form(method='POST', actions="/addPark")
+            form(action="/parks/addPark", method='post')
+                input(type='hidden', name='_csrf', value=_csrf)
                 div.form-group
                     label(for='name') Enter Park Name:
-                    input#parks.form-control(type='text', placeholder='Park Name' name='parkname')
+                    input#name.form-control(type='text', placeholder='Park Name' name='name')
                 div.form-group
                     label(for='image_link') Enter Image Link:
-                    input#parks.form-control(type='text', placeholder='Image Link' name='imagelink')
+                    input#image_link.form-control(type='text', placeholder='Image Link' name='image_link')
                 div.form-group
                     label(for='location') Enter Location:
-                    input#parks.form-control(type='text', placeholder='Location' name='location')
+                    input#location.form-control(type='text', placeholder='Location' name='location')
                 div.form-group
                     label(for='established_date') Enter Established Date:
-                    input#parks.form-control(type='text', placeholder='Established Date' name='establisheddate')
+                    input#established_date.form-control(type='text', placeholder='Established Date' name='established_date')
                 div.form-group
                     label(for='area') Enter Area:
-                    input#parks.form-control(type='text', placeholder='Area' name='area')
+                    input#area.form-control(type='text', placeholder='Area' name='area')
                 div.form-group
                     label(for='yearly_visitors') Enter Yearly Visitors:
-                    input#parks.form-control(type='text', placeholder='Yearly Visitors' name='yearlyvisitors')
+                    input#yearly_visitors.form-control(type='text', placeholder='Yearly Visitors' name='yearly_visitors')
                 div.form-group
                     label(for='description') Enter Description:
-                    input#parks.form-control(type='text', placeholder='Description' name='description')
+                    input#description.form-control(type='text', placeholder='Description' name='description')
                 div.form-group
                     label(for='twitter_id') Enter Twitter ID:
-                    input#parks.form-control(type='text', placeholder='Twitter ID' name='twitterid')
+                    input#twitter_id.form-control(type='text', placeholder='Twitter ID' name='twitter_id')
                 
                 button.btn.btn-primary(type='submit') Submit

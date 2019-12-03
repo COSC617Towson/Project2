@@ -40,6 +40,7 @@ router.get('/viewPark/:id', (req, res, next) => {
 });
 
 router.post('/addPark', (req, res, next) => {
+  console.log(req.body.name, req.body.location)
   const park = new Park({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
@@ -53,10 +54,11 @@ router.post('/addPark', (req, res, next) => {
   });
   park.save().then(result => {
     console.log(result);
-    res.status(201).json({
-      message: 'Handling POST requests to /parks',
-      createdPark: result
-    });
+    res.redirect('/');
+    //res.status(201).json({
+    //  message: 'Handling POST requests to /parks',
+     // createdPark: result
+    //});
   }).catch(err => {
       console.log(err);
       res.status(500).json({
