@@ -5,8 +5,24 @@ block content
   h1 Welcome to ParkReview
   p.lead A place to get information for your favorite National Parks!
   hr
-  img.img-fluid.rounded.mb-4(src='https://quotefancy.com/media/wallpaper/3840x2160/5219149-James-Bryce-Quote-The-national-park-is-the-best-idea-America-ever.jpg' alt='')
   .row
+    .col-lg-6.mb-4
+      .card.h-100
+        a.btn.btn-raised(href='parks', role='button')
+          h4.card-header View All Parks
+          .card-body
+            //img(src=elem.image_link height = '200px' width = '250px' alt='')
+    .col-lg-6.mb-4
+      .card.h-100
+        a.btn.btn-raised(href='parks', role='button')
+          h4.card-header Add a New Park
+          .card-body
+              //img(src=elem.image_link height = '200px' width = '250px' alt=''
+            
+  img.img-fluid.rounded.mb-4(src='https://quotefancy.com/media/wallpaper/3840x2160/5219149-James-Bryce-Quote-The-national-park-is-the-best-idea-America-ever.jpg' alt='')
+  
+  
+  //.row
     .col-sm-6
        h2 View all Parks
        a.btn.btn-raised(href='parks', role='button') View Parks »
